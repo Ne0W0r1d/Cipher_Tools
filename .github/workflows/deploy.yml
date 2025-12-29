@@ -20,7 +20,7 @@ jobs:
             artifact: CipherTools-Linux-qt610
           # Windows Qt 6.10
           - os: windows-latest
-            qt: 6.10.1
+            qt: 6.5.3
             artifact: CipherTools-Windows
 
     runs-on: ${{ matrix.os }}
@@ -61,7 +61,7 @@ jobs:
         shell: cmd
         run: |
           cd build
-          nmake
+          nmake /NOLOGO
           windeployqt release\CipherTools.exe
           del /q release\*.obj
           del /q release\*.h

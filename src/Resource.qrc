@@ -4,5 +4,6 @@
         <file>Resource/CipherTools_Icons.svg</file>
         <file>Resource/CipherTools_NameIco.png</file>
         <file>Resource/qt.svg</file>
+        <file>Resource/checker-web.html</file>
     </qresource>
 </RCC>
