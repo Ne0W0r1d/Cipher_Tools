@@ -3,5 +3,6 @@
         <file>Resource/qt.png</file>
         <file>Resource/CipherTools_Icons.svg</file>
         <file>Resource/CipherTools_NameIco.png</file>
+        <file>Resource/qt.svg</file>
     </qresource>
 </RCC>
