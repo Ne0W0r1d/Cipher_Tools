@@ -140,7 +140,7 @@ void home::getwanv6()
 void home::getisp() {
     if (ipv4.isEmpty())
         return;
-    QNetworkAccessManager *ispget = new QNetworkAccessManager(this);
+    static  QNetworkAccessManager *ispget = new QNetworkAccessManager(this);
     QNetworkRequest request(QUrl("https://cip.cc/"+ ipv4));
     QNetworkReply *ispreply = ispget->get(request);
     connect(ispreply, &QNetworkReply::finished, this, [this, ispreply]() {
