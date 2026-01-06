@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>SpdTest 测速</string>
   </property>
   <widget class="QWebEngineView" name="webEngineView">
    <property name="geometry">

@@ -303,7 +303,7 @@ void home::Tools_USTCspd_Trigger(){
     USTC_SPD->setAttribute(Qt::WA_DeleteOnClose); // 关闭窗口后删除对象
     USTC_SPD->setModal(false); // 关闭
     USTC_SPD->show();
-    USTC_SPD->targetURL("USTC",QUrl("https://test.ustc.edu.cn"));
+    USTC_SPD->targetURL(QUrl("https://test.ustc.edu.cn"));
     qDebug() << "请检查测速窗口";
 }
 
@@ -316,7 +316,7 @@ void home::Tools_NJUspd_Trigger(){
     USTC_SPD->setAttribute(Qt::WA_DeleteOnClose); // 关闭窗口后删除对象
     USTC_SPD->setModal(false);
     USTC_SPD->show();
-    USTC_SPD->targetURL("NJU",QUrl("https://test.nju.edu.cn"));
+    USTC_SPD->targetURL(QUrl("https://test.nju.edu.cn"));
 
     qDebug() << "请检查测速窗口";
 }

@@ -13,7 +13,6 @@ TestSpeed_USTC::~TestSpeed_USTC()
     delete ui;
 }
 
-void TestSpeed_USTC::targetURL(const QString &name, const QUrl &url) {
-    setWindowTitle(name + "测速");
+void TestSpeed_USTC::targetURL(const QUrl &url) {
     ui->webEngineView->load(url);
 }

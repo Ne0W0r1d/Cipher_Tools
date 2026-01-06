@@ -18,7 +18,7 @@ public:
     explicit TestSpeed_USTC(QWidget *parent = nullptr);
     ~TestSpeed_USTC();
 
-    void targetURL(const QString &name, const QUrl &url);
+    void targetURL(const QUrl &url);
 
 private:
     Ui::TestSpeed_USTC *ui;
