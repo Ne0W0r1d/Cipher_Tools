@@ -17,8 +17,6 @@
 ## 中文翻译明明是密码？为什么用其作为名字呢？而为什么子项目 Rana Toolkit 要叫 Rana 呢？
 
 名字取自于《崩坏：星穹铁道》的[赛飞儿](https://mzh.moegirl.org.cn/%E8%B5%9B%E9%A3%9E%E5%84%BF)，啊没错就是那只猫娘，~~你也可以理解为是无畏契约的阴暗保安零~~<br>
-而 Rana Toolkit 的 Rana 则取自于 《BanG Dream！It's MyGO！！！！！》的[要乐奈](https://mzh.moegirl.org.cn/%E8%A6%81%E4%B9%90%E5%A5%88)<br>
-Rana Toolkit 项目[传送门请前往](#rana-toolkit-传送门)<br>
 
 ## 预览截图
 
@@ -32,9 +30,9 @@ Rana Toolkit 项目[传送门请前往](#rana-toolkit-传送门)<br>
 - [X] 日志实现(Rana-Re)<br>
 - [X] 多网卡信息输出实现(Rana-Re)<br>
 - [ ] 设置和多 API 可选实现(Rana-Re)
-- [ ] 大陆和海外线同时信息获取(Alice/Saki-Beta)<br>
-- [ ] 路由跳点检测、WOL功能实现(Alice/Saki-Beta)<br>
-- [ ] NAT 检测、DNS 检测实现(Alice/Saki-Beta)<br>
+- [ ] 大陆和海外线同时信息获取(Alice-Beta)<br>
+- [ ] 路由跳点检测、WOL功能实现(Alice-Beta)<br>
+- [ ] NAT 检测、DNS 检测实现(Alice-Beta)<br>
 - [ ] 设备信息实现(Stable)<br>
 - [ ] 全新UI（NXT-Stable）<br>
 - [ ] i18n 支持（NXT-Stable)<br>
