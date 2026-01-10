@@ -23,8 +23,6 @@
 
 ![Home](git_img/sc.png)<br>
 
-<center>主页</center>
-
 ## TO-DO LIST
 
 - [X] UI基础布局(Anno)<br>
@@ -72,3 +70,9 @@
 Qt 使用 GNU General Public License x GNU Lesser General Public License 3.0 双协议自由开源协议开源<br>
 Qt WebEngine 基于 Chromium，使用多重开源协议开源，请参考 Chromium 项目开源协议<br>
 USTC 和 NJU 测速站由 USTC 与 NJU 所有，解释权由 USTC 和 NJU 所有，本软件只提供跳板<br>
+
+## 项目基建鸣谢！
+
+- [腾讯 EdgeOne](https://cloud.tencent.com/product/teo)
+- [Ne0W0r1d新界](https://ne0w0r1d.top)
+- [RIN7TK](https://stat.rin.red/)
