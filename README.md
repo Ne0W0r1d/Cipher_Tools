@@ -30,6 +30,8 @@
 - [X] UI基础布局(Anno)<br>
 - [X] 日志实现(Rana-Re)<br>
 - [X] 多网卡信息输出实现(Rana-Re)<br>
+- [X] USTC 和 NJU 测速站加入(Rana-Re)<br>
+- [X] 多出口(Rana-Re)<br>
 - [ ] 设置和多 API 可选实现(Rana-Re)
 - [ ] 大陆和海外线同时信息获取(Alice-Beta)<br>
 - [ ] 路由跳点检测、WOL功能实现(Alice-Beta)<br>
@@ -63,3 +65,10 @@
 ## AIGC 相关
 
 本项目含有部分 AIGC 代码，但本人会经过测试实验并因此学习改进
+
+## 许可协议
+
+本软件使用 MIT 自由开源协议开源
+Qt 使用 GNU General Public License x GNU Lesser General Public License 3.0 双协议自由开源协议开源
+Qt WebEngine 基于 Chromium，使用多重开源协议开源，请参考 Chromium 项目开源协议
+USTC 和 NJU 测速站由 USTC 与 NJU 所有，解释权由 USTC 和 NJU 所有，本软件只提供跳板
