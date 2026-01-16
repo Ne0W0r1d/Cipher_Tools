@@ -23,7 +23,6 @@ about::about(QWidget *parent)
     QString systemver = QSysInfo::productVersion();// 获取系统版本
 
     ui->softver_info->setText(AK_VERSION);//版本信息
-    ui->toolversion->setText(AKT_VERSION);//版本信息
     ui->env->setText(systemname.toUpper() + " (" + distro + ")");// 显示系统环境
 
     connect(ui->qt, &QPushButton::clicked, this, [=]() {

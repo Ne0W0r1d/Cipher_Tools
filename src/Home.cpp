@@ -31,7 +31,7 @@ home::home(QWidget *parent)
 
     home::HomeInfo_Refresh(); // 启动首次触发刷新（Trigger Auto Refresh）
     qInfo()<<"系统环境："<<systemname<<"；系统："<<distro<<"；系统版本："<<systemver; // 输出系统版本日志
-    qInfo()<<"软件版本："<<AK_VERSION<<"；工具箱版本："<<AKT_VERSION; // 输出软件版本日志，版本在 Main.cpp
+    qInfo()<<"软件版本："<<AK_VERSION; // 输出软件版本日志，版本在 Main.cpp
 
     // 菜单栏：帮助
     connect(ui -> about, &QAction::triggered, this, &home::help_About_trigger); // 菜单栏 - 帮助：关于

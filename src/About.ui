@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>587</width>
+    <width>581</width>
     <height>229</height>
    </rect>
   </property>
@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>180</y>
+     <y>160</y>
      <width>251</width>
      <height>20</height>
     </rect>
@@ -49,20 +49,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>100</y>
+     <y>60</y>
      <width>91</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>当前环境：</string>
+    <string>环境：</string>
    </property>
   </widget>
   <widget class="QLabel" name="env">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>120</y>
+     <y>80</y>
      <width>361</width>
      <height>19</height>
     </rect>
@@ -81,7 +81,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>软件版本：</string>
+    <string>版本：</string>
    </property>
   </widget>
   <widget class="QLabel" name="softver_info">
@@ -95,32 +95,6 @@
    </property>
    <property name="text">
     <string>VERSION</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="toolversion">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>80</y>
-     <width>361</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TOOLVERSION</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="toolver">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>81</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>工具箱版本：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -184,6 +158,22 @@
    </property>
    <property name="autoExclusive">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="oss_license_2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>180</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>© 2025-2026 Ne0W0r1d</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
  </widget>

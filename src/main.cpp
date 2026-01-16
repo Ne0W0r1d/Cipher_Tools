@@ -16,7 +16,6 @@
 // 版本号
 QString AK_VERSION = "CIPHER.rana.release.20260110"; //主程序版本号
 QString BUILDDATE="20260110";
-QString AKT_VERSION = "RANATOOLKIT.astra.prototype"; //该程序版本号请根据 Ne0W0r1d/Rana_Toolkit 进行编写，目前 Prototype 是因为工具箱并没有实现
 
 
 // 自定义信息接口
