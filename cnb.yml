@@ -1,0 +1,53 @@
+.build: &build
+  docker:
+    image: ubuntu:latest
+  stages:
+    - name: Setup MSVC
+      script: |-
+        # 使用 GitHub Action: ilammy/msvc-dev-cmd@v1
+        # 请手动替换为等效 CNB 插件或脚本
+    - name: Install Qt
+      script: |-
+        # 使用 GitHub Action: jurplel/install-qt-action@v4
+        # 请手动替换为等效 CNB 插件或脚本
+    - name: Remove MinGW from PATH
+      script: >
+        $env:PATH = ($env:PATH.Split(';') | Where-Object {$_ -notmatch 'mingw64'})
+        -join ';'
+    - name: Configure (qmake)
+      script: |
+        mkdir -p build
+        cd build
+        qmake ../src
+    - name: Build (Windows)
+      script: |
+        cd build
+        nmake /NOLOGO
+        windeployqt release\CipherTools.exe
+        del /q release\*.obj
+        del /q release\*.h
+        del /q release\*.cpp
+    - name: Build
+      script: |
+        cd build
+        make -j$(nproc || sysctl -n hw.ncpu)
+        make INSTALL_ROOT="$PWD/../dist" install
+    - name: Upload artifact
+      script: |-
+        # 使用 GitHub Action: actions/upload-artifact@v4
+        # 请手动替换为等效 CNB 插件或脚本
+    - name: Upload artifact for windows
+      script: |-
+        # 使用 GitHub Action: actions/upload-artifact@v4
+        # 请手动替换为等效 CNB 插件或脚本
+
+
+main:
+  push:
+    -
+      name: "push-build"
+      <<: *build
+  pull_request:
+    -
+      name: "pull_request-build"
+      <<: *build
