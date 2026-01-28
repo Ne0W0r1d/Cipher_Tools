@@ -14,14 +14,14 @@
 #include "version.h" // 统一输出版本号
 
 // 版本号
-QString AK_VERSION = "CIPHER.rana.release.20260110"; //主程序版本号
-QString BUILDDATE="20260110";
+QString AK_VERSION = "CIPHER.rana.20260128"; //主程序版本号
+QString BUILDDATE="20260128";
 
 
 // 自定义信息接口
 void customMessageHandler(QtMsgType type, const QMessageLogContext &, const QString &msg)
 {
-    static QFile logFile("CipherTools.log"); //日志文件打开 / 生成
+    static QFile logFile("CipherTools.log"); // 日志文件打开 / 生成
 
     // 如果无法打开日志则生成报错
     if (!logFile.isOpen()) {
@@ -63,7 +63,7 @@ void customMessageHandler(QtMsgType type, const QMessageLogContext &, const QStr
         abort();// 则直接终止
 
     // 自动清理日志
-    if (logFile.size() > 2 * 1024 * 1024) { // 超过 2 MB
+    if (logFile.size() > 1 * 1024 * 1024) { // 超过 2 MB
         logFile.resize(0); // 清空
     }
 }

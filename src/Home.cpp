@@ -11,7 +11,7 @@
 #include "ui_Home.h"
 #include "version.h"
 #include "tools/multiout.h"
-#include "tools/testspeed.h"
+
 
 home::home(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +19,13 @@ home::home(QWidget *parent)
 {
     ui->setupUi(this);
     setFixedSize(this->width(),this->height()); //固定大小
+
+    /* 主页时间 */
+    timer4time = new QTimer(this);
+    QString DateTimeOnHome = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss ") ;
+    //connect(timer4time,timer4time->timeout(),this);
+
+    ui -> Time -> setText(DateTimeOnHome);
 
     QString systemname = QSysInfo::kernelType();// 获取内核信息
     QString distro = QSysInfo::prettyProductName();// 获取发行版名称
@@ -33,7 +40,7 @@ home::home(QWidget *parent)
     qInfo()<<"系统环境："<<systemname<<"；系统："<<distro<<"；系统版本："<<systemver; // 输出系统版本日志
     qInfo()<<"软件版本："<<AK_VERSION; // 输出软件版本日志，版本在 Main.cpp
 
-    // 菜单栏：帮助
+    /* 菜单栏：帮助 */
     connect(ui -> about, &QAction::triggered, this, &home::help_About_trigger); // 菜单栏 - 帮助：关于
     connect(ui -> wiki, &QAction::triggered, this, &home::help_Wiki_trigger); // 菜单栏 - 帮助：WIKI
     connect(ui -> blog, &QAction::triggered, this, &home::help_Blog_trigger);// 菜单栏-帮助：BLOG
@@ -48,12 +55,9 @@ home::home(QWidget *parent)
     connect(ui -> issueGithub, &QAction::triggered, this, &home::help_issueGithub_trigger);// 菜单栏 - 帮助 - 问题反馈：Github
     connect(ui -> issueCodeberg, &QAction::triggered, this, &home::help_issueCodeberg_trigger);// 菜单栏 - 帮助 - 问题反馈：Codeberg
 
-    /* 菜单-工具 */
-    connect(ui -> MOWeb, &QAction::triggered, this, &home::Tools_MOWeb_Trigger); // 工具：多出口
-    connect(ui -> IPv4_USTC, &QAction::triggered, this, &home::Tools_USTCspd_v4_Trigger); // 工具：中科大 v4 测速站
-    connect(ui -> IPv6_USTC, &QAction::triggered, this, &home::Tools_USTCspd_v6_Trigger); // 工具：中科大 v6 测速站
-    connect(ui -> IPv4_NJU, &QAction::triggered, this, &home::Tools_NJUspd_v4_Trigger); // 工具：南京大学 V4 测速站
-    connect(ui -> IPv6_NJU, &QAction::triggered, this, &home::Tools_NJUspd_v6_Trigger); // 工具：南京大学 V6 测速站
+    /* 菜单栏：工具 */
+    connect(ui -> MOWeb, &QAction::triggered, this, &home::Tools_MOWeb_Trigger);
+
     /*主页：主机名*/
     QString localHostname = QHostInfo::localHostName(); // 主机名实现
     QString beforPCname = "主机名：";// setText | hostname 前的信息
@@ -95,7 +99,12 @@ void home::HomeInfo_Refresh(){
 
 }
 
-// 公网 IPv4
+/* 主页：时间 */
+void HomeInfo_Time(){
+
+}
+
+/* 公网 IPv4 */
 void home::getwanv4()
 {
     QNetworkRequest request(QUrl("https://4.ipw.cn")); // 设置Request API为ipw.cn（TODO LIST - 支持多API，并研究出口API）
@@ -325,60 +334,6 @@ void home::Tools_MOWeb_Trigger(){
     qDebug() << "请检查窗口 MutiOutWeb";
 }
 
-/* USTC v4 测速站 - 使用 Qt Web Engine */
-void home::Tools_USTCspd_v4_Trigger(){
-    qInfo()<<"已触发打开测速";
-
-    TestSpeed_USTC *USTC_SPD = new TestSpeed_USTC(this);   // 加载窗口
-
-    USTC_SPD->setAttribute(Qt::WA_DeleteOnClose); // 关闭窗口后删除对象
-    USTC_SPD->setModal(false); // 关闭
-    USTC_SPD->show();
-    USTC_SPD->targetURL(QUrl("https://test.ustc.edu.cn"));
-    qDebug() << "请检查测速窗口";
-}
-
-/* USTC v4 测速站 - 使用 Qt Web Engine */
-void home::Tools_USTCspd_v6_Trigger(){
-    qInfo()<<"已触发打开测速";
-
-    TestSpeed_USTC *USTC_SPD = new TestSpeed_USTC(this);   // 加载窗口
-
-    USTC_SPD->setAttribute(Qt::WA_DeleteOnClose); // 关闭窗口后删除对象
-    USTC_SPD->setModal(false); // 关闭
-    USTC_SPD->show();
-    USTC_SPD->targetURL(QUrl("https://test6.ustc.edu.cn"));
-    qDebug() << "请检查测速窗口";
-}
-
-/* NJU v4 测速站 - 使用 Qt Web Engine */
-void home::Tools_NJUspd_v4_Trigger(){
-    qInfo()<<"已触发打开测速";
-
-    TestSpeed_USTC *USTC_SPD = new TestSpeed_USTC(this);   // 加载窗口
-
-    USTC_SPD->setAttribute(Qt::WA_DeleteOnClose); // 关闭窗口后删除对象
-    USTC_SPD->setModal(false);
-    USTC_SPD->show();
-    USTC_SPD->targetURL(QUrl("https://test.nju.edu.cn"));
-
-    qDebug() << "请检查测速窗口";
-}
-
-/* NJU v6 测速站 - 使用 Qt Web Engine */
-void home::Tools_NJUspd_v6_Trigger(){
-    qInfo()<<"已触发打开测速";
-
-    TestSpeed_USTC *USTC_SPD = new TestSpeed_USTC(this);   // 加载窗口
-
-    USTC_SPD->setAttribute(Qt::WA_DeleteOnClose); // 关闭窗口后删除对象
-    USTC_SPD->setModal(false);
-    USTC_SPD->show();
-    USTC_SPD->targetURL(QUrl("https://test6.nju.edu.cn"));
-
-    qDebug() << "请检查测速窗口";
-}
-
 /* 帮助实现 */
 
 /*打开文档页*/
@@ -483,7 +438,7 @@ void home::help_issueCodeberg_trigger(){
 
     QUrl issuegithub("https://codeberg.com/Ne0W0r1d/Cipher_Tools/issues");
     QDesktopServices::openUrl(issuegithub);
-    qDebug() << "打开Github议题已发出，请检查浏览器";
+    qDebug() << "打开Codeberg议题已发出，请检查浏览器";
 
 }
 

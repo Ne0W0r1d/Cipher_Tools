@@ -16,7 +16,6 @@ SOURCES += \
     settings.cpp \
     tools/deviceinfo.cpp \
     tools/multiout.cpp \
-    tools/testspeed.cpp \
     tools/wakenow.cpp
 
 HEADERS += \
@@ -25,7 +24,6 @@ HEADERS += \
     settings.h \
     tools/deviceinfo.h \
     tools/multiout.h \
-    tools/testspeed.h \
     tools/wakenow.h \
     version.h
 
@@ -35,7 +33,6 @@ FORMS += \
     settings.ui \
     tools/deviceinfo.ui \
     tools/multiout.ui \
-    tools/testspeed.ui \
     tools/wakenow.ui
 
 # Default rules for deployment.

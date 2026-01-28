@@ -26,8 +26,9 @@
 #include <QList> // 动态数组支持
 #include <QRegularExpression> // 正则表达式支持
 #include <QJsonDocument> // Json 解析支持
+#include <QTimer> // 计时器支持
 
-#pragma once
+#pragma once // 库重复则编译一次
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -73,19 +74,16 @@ private slots:
 /* 主页 */
     void HomeInfo_Refresh(); // 刷新按钮信号槽
     // void HomeInfo_Settings(); // 设置按钮信号槽，由于设置没做完暂不启用
+    void HomeInfo_Time(); // 主页时间刷新
 
     /* Tools */
     void Tools_MOWeb_Trigger(); // 在线版多出口信号槽
 
-/* 工具 */
-    void Tools_USTCspd_v4_Trigger(); // 在线打开 USTC 测速
-    void Tools_USTCspd_v6_Trigger(); // 在线打开 USTC 测速（V6）
-    void Tools_NJUspd_v4_Trigger(); // 在线打开 NJU 测速
-    void Tools_NJUspd_v6_Trigger(); // 在线打开 NJU 测速
 private:
     Ui::home *ui;
     QNetworkAccessManager *sessionNet;
     QString ipv4; // V4 回调
     QString ipv6; // V6 回调
+    QTimer *timer4time; // 时间实时刷新计时器
 };
 #endif // HOME_H

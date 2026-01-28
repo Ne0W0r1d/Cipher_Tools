@@ -18,30 +18,14 @@
     <normaloff>:/Resource/CipherTools_Icons.svg</normaloff>:/Resource/CipherTools_Icons.svg</iconset>
   </property>
   <widget class="QWidget" name="Home">
-   <widget class="QPushButton" name="hidemode">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>310</y>
-      <width>86</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>私隐模式 (&amp;P)</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="settings">
     <property name="enabled">
      <bool>false</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>310</y>
+      <x>20</x>
+      <y>300</y>
       <width>86</width>
       <height>27</height>
      </rect>
@@ -54,7 +38,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>340</y>
+      <y>330</y>
       <width>231</width>
       <height>21</height>
      </rect>
@@ -258,8 +242,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>310</y>
+      <x>120</x>
+      <y>300</y>
       <width>86</width>
       <height>27</height>
      </rect>
@@ -272,7 +256,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>360</y>
+      <y>350</y>
       <width>231</width>
       <height>20</height>
      </rect>
@@ -292,7 +276,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>240</x>
       <y>370</y>
       <width>521</width>
       <height>20</height>
@@ -319,7 +303,7 @@
    <widget class="QLabel" name="Version">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>420</x>
       <y>350</y>
       <width>341</width>
       <height>20</height>
@@ -341,6 +325,19 @@
     </property>
     <property name="wordWrap">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Time">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>370</y>
+      <width>291</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TIME</string>
     </property>
    </widget>
   </widget>
@@ -405,34 +402,12 @@
      <addaction name="PingCS"/>
      <addaction name="PINGGNT"/>
     </widget>
-    <widget class="QMenu" name="spd">
-     <property name="title">
-      <string>测速 (&amp;S)</string>
-     </property>
-     <widget class="QMenu" name="menuUSTC">
-      <property name="title">
-       <string>USTC - 中科大</string>
-      </property>
-      <addaction name="IPv4_USTC"/>
-      <addaction name="IPv6_USTC"/>
-     </widget>
-     <widget class="QMenu" name="menuNJU">
-      <property name="title">
-       <string>NJU - 南京大学</string>
-      </property>
-      <addaction name="IPv4_NJU"/>
-      <addaction name="IPv6_NJU"/>
-     </widget>
-     <addaction name="menuUSTC"/>
-     <addaction name="menuNJU"/>
-    </widget>
     <addaction name="MOWeb"/>
     <addaction name="deviceinfo"/>
     <addaction name="WOL"/>
     <addaction name="track"/>
     <addaction name="NAT"/>
     <addaction name="Ping"/>
-    <addaction name="spd"/>
    </widget>
    <addaction name="tools"/>
    <addaction name="helpcenter"/>
